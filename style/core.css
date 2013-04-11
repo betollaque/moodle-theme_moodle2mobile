@@ -223,8 +223,11 @@ body.editing ul.section>li {border-bottom: 1px dashed #808080; position:relative
 	margin: 0;
 	padding: 0;
 }
-.mform .filemanager {
-	width: 290px;
+.mform .filemanager, #id_message_tbl, #id_subscribe {
+	width: 75% !important;
+	left: 0;
+	margin-left: 0;
+	padding-left: 0;
 }
 /* Footer
 -------------------------- */
