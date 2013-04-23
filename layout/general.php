@@ -71,7 +71,7 @@ span.backpost a{ color: #fff; }
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)); echo ' '.$PAGE->theme->settings->choicestyle;?>">
 <?php echo $OUTPUT->standard_top_of_body_html(); 
 global $DB; 
-$instancia = $DB->get_fieldset_select('block_instances', 'id', 'blockname = "navigation" or blockname = "settings"');
+$instancia = $DB->get_fieldset_select('block_instances', 'id', 'blockname = \'navigation\' or blockname = \'settings\''); 
 
 $topsettings = $this->page->get_renderer('theme_moodle2mobile','topsettings'); // get rederer ------------------------------------------------------------------------
 ?>
