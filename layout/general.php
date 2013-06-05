@@ -71,7 +71,9 @@ span.backpost a{ color: #fff; }
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)); echo ' '.$PAGE->theme->settings->choicestyle;?>">
 <?php echo $OUTPUT->standard_top_of_body_html(); 
 global $DB; 
-$instancia = $DB->get_fieldset_select('block_instances', 'id', 'blockname = \'navigation\' or blockname = \'settings\''); 
+
+$instancia_navigation = $DB->get_fieldset_select('block_instances', 'id','blockname = \'navigation\' ORDER BY id DESC');
+$instancia_settings = $DB->get_fieldset_select('block_instances', 'id','blockname = \'settings \' ORDER BY id DESC');
 
 $topsettings = $this->page->get_renderer('theme_moodle2mobile','topsettings'); // get rederer ------------------------------------------------------------------------
 ?>
@@ -110,7 +112,7 @@ $topsettings = $this->page->get_renderer('theme_moodle2mobile','topsettings'); /
 			<div class="pop-inner">
 			<div id="pages-wrapper" class="iscroller">
 					<div id="pages-iscroll">
-					<div id="inst<?php echo $instancia[0]; ?>" class="block_navigation pop-navi">
+					<div id="inst<?php echo $instancia_navigation[0]; ?>" class="block_navigation pop-navi">
                     <div class="content">
                     <?php 
 			
@@ -193,7 +195,7 @@ $topsettings = $this->page->get_renderer('theme_moodle2mobile','topsettings'); /
        <div id="classicSettings" class="tabbed pop-inner">
        <div id="pages-wrapper2" class="iscroller">
 					<div id="pages-iscroll">
-					<div id="inst<?php echo $instancia[1]; ?>" class="block_settings">
+					<div id="inst<?php echo $instancia_settings[0]; ?>" class="block_settings">
                     <div class="content">
                     <?php 
 					
